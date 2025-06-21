@@ -1,4 +1,4 @@
-public class typesOperators {
+public class typesOfOperators {
     public static void main(String[] args) {
         //Arithmetic operators
         /* int a = 12;
