@@ -1,35 +1,31 @@
 import javax.swing.*;
 import java.awt.*;
-
 public class BoxLayoutExample {
     public static void main(String[] args) {
-        //Create JFrame
-        JFrame frame = new JFrame("BoderLayout Example");
+        JFrame frame = new JFrame("BoxLayout- Vertical List");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500,300);
+        frame.setSize(300,250);
 
-        //Create Jpanel with boxlayout
-        JPanel sidebar = new JPanel();
-        sidebar.setLayout(new BoxLayout(sidebar,BoxLayout.Y_AXIS));
-
-        sidebar.add(new JButton("Home"));
-        sidebar.add(new JButton("Profile"));
-        sidebar.add(new JButton("Layout"));
-
-        //CREATE  JPanel with  BorderLAYOUT
+        //Create a Jpanel
         JPanel panel = new JPanel();
-        panel.setLayout(new BorderLayout(10,10));
-        panel.add(sidebar,BorderLayout.WEST);
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        panel.setBorder(BorderFactory.createEmptyBorder(20,50,20,50)); //pading
 
-        //Add  Components to all regions
-        panel.add(new JButton ("North(Top)"), BorderLayout.NORTH);
-        panel.add(new JButton ("South(Bottom)"), BorderLayout.SOUTH);
-        //panel.add(new JButton ("West(Left)"), BorderLayout.WEST);
-        panel.add(new JButton ("East(Right)"), BorderLayout.EAST);
-        panel.add(new JButton ("Center(Min Area)"), BorderLayout.CENTER);
+        //ADD Button Vertically
+        panel.add(new JButton("Dashboard"));
+        panel.add(Box.createVerticalStrut(10)); //gap between components
+
+        panel.add(new JButton("Profile"));
+        panel.add(Box.createVerticalStrut(10));
+
+        panel.add(new JButton("Settings"));
+        panel.add(Box.createVerticalStrut(10));
+
+        panel.add(new JButton("Layout"));
 
         //Add Panel to frame
         frame.add(panel);
         frame.setVisible(true);
+
     }
 }
