@@ -12,3 +12,4 @@ public class PanelDemo1_Simple {
         frame.setVisible(true);
     }
 }
+
