@@ -30,3 +30,4 @@ public class RegistrationForm {
         frame.setVisible(true);
     }
 }
+
