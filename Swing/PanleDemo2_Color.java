@@ -13,3 +13,4 @@ public class PanleDemo2_Color {
         frame.setVisible(true);
     }
 }
+
