@@ -8,3 +8,4 @@ public class DataType {
         System.out.println(age+" "+pi+" "+largeNumber+" "+isJavaFun+" "+grade);
     }
 }
+
