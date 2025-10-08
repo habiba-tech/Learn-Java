@@ -1,0 +1,33 @@
+import jakarta.servlet.*;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
+@WebServlet("/readerSession")
+public class ReadSessionServlet extends HttpServlet {
+    protected void doGet(HttpServletRequest req, HttpServletResponse res)
+        throws ServletException, IOException {
+
+        HttpSession session = req.getSession(false);
+        res.setContentType("text/html");
+        PrintWriter out = res.getWriter();
+
+        if (session!= null){
+            String game = (String) session.getAttribute("favouriteGame");
+            if(game!= null){
+                out.println("<h2>Your favourite game:"+game+"</h2>");
+            }else {
+                out.println("<h2>No game found in session! </h2>");
+            }
+        }else {
+            out.println("<h2> No active session found </h2>");
+        }
+        out.println("<br><a href='login.html'>Back to Form</a>");
+    }
+}
