@@ -1,0 +1,26 @@
+import jakarta.servlet.*;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
+import java.io.IOException;
+
+
+@WebServlet("/logoutSession")
+public class LogoutSessionServlet extends HttpServlet {
+    protected void doGet (HttpServletRequest req, HttpServletResponse res)
+        throws ServletException, IOException {
+
+        HttpSession session = req.getSession(false);
+        if(session !=null){
+            session.invalidate(); //Ends session
+        }
+
+        res.setContentType("text/html");
+        res.getWriter().println("<h2> Session ended. you are logged out. </h2>");
+        res.getWriter().println("<a href='login.html'> Start Again </a>");
+
+    }
+}
