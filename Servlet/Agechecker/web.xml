@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age Check</title>
+</head>
+<body>
+<h2>Enter Your Age</h2>
+<form action="check" method="post">
+    <input type="number" id="age" name="age" required>
+   <button type="button" >Submit</button>
+</form>
+</body>
+</html>
