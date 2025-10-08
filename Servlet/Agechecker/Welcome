@@ -1,0 +1,15 @@
+import jakarta.servlet.*;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.*;
+import java.io.*;
+
+@WebServlet("/Welcome")
+public class Welcome extends HttpServlet{
+    protected void doGet(HttpServletRequest req, HttpServletResponse res)
+            throws ServletException, IOException {
+
+        res.setContentType("text/html");
+        PrintWriter out = res.getWriter();
+        out.println("<h1> Welcome! You are allowed to enter the site .</h1> ");
+    }
+}
